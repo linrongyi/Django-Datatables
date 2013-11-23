@@ -2,6 +2,8 @@ This project actually a fork of datatables_demo 1.6.2 which is work with Django 
 I integrated project with buildout and made it work with Django 1.3 and above.
 You can easily integrate project with yours if you follow instructions on this readme document.
 
+Hello Github
+============
 
 Django-Datatables
 =======
