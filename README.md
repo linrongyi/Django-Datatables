@@ -5,6 +5,8 @@ You can easily integrate project with yours if you follow instructions on this r
 Hello Github
 ============
 
+I want to make it support Django 1.6.
+
 Django-Datatables
 =======
 
