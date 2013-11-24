@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ block.super }}
+
+<script type="text/javascript">
+/* <![CDATA[ */
+$(document).ready(function() {
+	oTable = $('#mytable').dataTable({
+		'sPaginationType': 'full_numbers'
+	});
+
+    $('td', oTable.fnGetNodes()).editable( '/ajax/edit_cell', {
+		"callback": function( sValue, y ) {
+			var aPos = oTable.fnGetPosition( this );
+			oTable.fnUpdate( sValue, aPos[0], aPos[1] );
+		},
+		"submitdata": function ( value, settings ) {
+			return {
+				"row_name": this.parentNode.getAttribute('rowname'),
+                "col_name": this.getAttribute('colname'),
+				//"column": oTable.fnGetPosition( this )[2]
+			};
+		},
+		"height": "14px"
+	} );
+
+} );
+/* ]]> */
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+<a href="/">Back to index</a> </br>
+
+<div style="width:50%;">
+
+
+<table id="mytable" style="width:100%;">
+	<thead>
+		<tr>
+			<th>
+				ID
+			</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Formal name
+			</th>
+			<th>
+				Capital
+			</th>
+			<th>
+				Currency code
+			</th>
+			<th>
+				Currency name
+			</th>
+			<th>
+				Phone prefix
+			</th>
+			<th>
+				TLD
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for country in countries %}
+			<tr rowname="{{country.name}}" id="{{country.id}}">
+				<td colname=id>{{country.id}}</td>
+				<td colname="name">{{country.name}}</td>
+				<td colname="formal_name">{{country.formal_name}}</td>
+				<td colname="capital">{{country.capital}}</td>
+				<td colname="currency_code">{{country.currency_code}}</td>
+				<td colname="currency_name">{{country.currency_name}}</td>
+				<td colname="phone_prefix">{{country.phone_prefix}}</td>
+				<td colname="tld">{{country.tld}}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>
+{% endblock %}
