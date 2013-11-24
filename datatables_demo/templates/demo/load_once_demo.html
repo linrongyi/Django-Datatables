@@ -6,7 +6,7 @@
 <script type="text/javascript">
 /* <![CDATA[ */
 $(document).ready(function() {
-	$('#countries-table').dataTable({
+	$('#mytable').dataTable({
 		'sPaginationType': 'full_numbers', 
 	});
 } );
@@ -16,9 +16,11 @@ $(document).ready(function() {
 {% endblock %}
 
 {% block content %}
-<a href="/">Back to index</a>
+
+<a href="/">Back to index</a> </br>
+
 <div style="width:50%;">
-<table id="countries-table" style="width:100%;">
+<table id="mytable" style="width:100%;">
 	<thead>
 		<tr>
 			<th>

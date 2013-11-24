@@ -1,26 +1,15 @@
-This project actually a fork of datatables_demo 1.6.2 which is work with Django 1.1 and below. For more information checkout [1].
-I integrated project with buildout and made it work with Django 1.3 and above.
-You can easily integrate project with yours if you follow instructions on this readme document.
-
-Hello Github
-============
-
-I want to make it support Django 1.6.
+This project actually a fork of datatables_demo 1.6.2 which is work with Django 1.5.1 and below. For more information checkout [1].
 
 Django-Datatables
 =======
 
 Datatables-Datatables is a demonstration of the jQuery plug in, datatables with server side datasource from Django. The demonstration contains a working demoDjango project complete with HTML, CSS and Javascript needed to implement a complete working same.
 
-How To Install
+How To Run This Demo?
 ======
 
-    $ sudo apt-get install git
-    $ git clone git://github.com/farukuzun/Django-Datatables.git
-    $ cd Django-Datatables
-    $ python bootstrap.py
-    $ ./bin/buildout
-    $ ./bin/django runserver
+    $ cd datatables_demo
+    $ python manage.py runserver 8080
 
 Usage
 ======
